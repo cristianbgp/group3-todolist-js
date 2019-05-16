@@ -1,3 +1,6 @@
+// this is our initial data
+// the format of the date is yyyy-mm-dd
+
 tasksArray = [
   {
     description: "Study CSS",
