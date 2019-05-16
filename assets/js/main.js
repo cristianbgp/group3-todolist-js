@@ -1,7 +1,7 @@
 // this is our initial data
 // the format of the date is yyyy-mm-dd
 
-tasksArray = [
+const tasksArray = [
   {
     description: "Study CSS",
     creation_date: new Date("2019-01-01"),
@@ -21,5 +21,17 @@ tasksArray = [
     marked: false
   }
 ];
+
+function createTask(description, due_date) {
+  newTask = {
+    description: description,
+    creation_date: new Date(),
+    due_date: due_date,
+    marked: false
+  };
+  tasksArray.push(newTask);
+}
+
+createTask("Hola", new Date());
 
 console.log(tasksArray);
