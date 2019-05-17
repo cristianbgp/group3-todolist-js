@@ -17,7 +17,7 @@ let tasksArray = [
   {
     description: "Update Cuchi",
     creationDate: new Date("2019-01-02"),
-    dueDate: new Date("2019-01-02"),
+    dueDate: new Date("2019-01-10"),
     marked: false
   }
 ];
@@ -37,11 +37,8 @@ function createTask(description, dueDate) {
 }
 
 function markTask(index) {
-  tasksArray[index].marked = true;
-}
-
-function unmarkTask(index) {
-  tasksArray[index].marked = false;
+  tasksArray[index].marked = !tasksArray[index].marked;
+  return tasksArray[index].marked;
 }
 
 const ORDER_TYPES = ["description", "creationDate", "dueDate"];
