@@ -6,7 +6,7 @@ let tasksArray = [
     description: "Study CSS",
     creationDate: new Date("2019-04-01"),
     dueDate: new Date("2019-01-05"),
-    marked: false
+    marked: true
   },
   {
     description: "Present miniassigment",
@@ -70,17 +70,24 @@ function orderTasks(array, orderType, ascendent) {
 }
 
 function showTasks() {
-  function formatDate(Date) {
-    age += years;
-    console.log(age);
+  //clear task_list
+  var e = document.getElementById("task_list");
+  var child = e.lastElementChild;
+  while (child) {
+    e.removeChild(child);
+    child = e.lastElementChild;
   }
+
+  //fill task_list
   var length = tasksArray.length;
   for (i = 0; i < length; i++) {
     var entry = document.createElement("li");
     entry.className = "task__item";
     entry.id = i;
     entry.innerHTML =
-      "<input type='checkbox' class='task__checkbox' /><span class='task_description'>" +
+      "<input type='checkbox' class='task__checkbox'" +
+      (tasksArray[i].marked ? "checked>" : ">") +
+      "<span class='task_description'>" +
       tasksArray[i].description +
       "</span> <span class='task__date'>" +
       tasksArray[i].dueDate.toDateString() +
