@@ -44,6 +44,10 @@ function unmarkTask(index) {
   tasksArray[index].marked = false;
 }
 
+function destroyTask(index) {
+  tasksArray[index].splice(index, 1);
+}
+
 const ORDER_TYPES = ["description", "creationDate", "dueDate"];
 
 function orderTasks(array, orderType, ascendent) {
