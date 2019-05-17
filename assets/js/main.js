@@ -65,6 +65,38 @@ function orderTasks(array, orderType, ascendent) {
   }));
 }
 
+let isAscendentDue = true;
+let isAscendentCreation = true;
+let isAscendentAlphabetic = true;
+const $orderButtonDue = document.getElementById("order-by-due");
+const $orderButtonCreation = document.getElementById("order-by-creation");
+const $orderButtonAlphabetic = document.getElementById("order-by-alphabetic");
+
+function handleOrderDue(event) {
+  console.log(event);
+  orderTasks(tasksArray, ORDER_TYPES[2], isAscendent);
+  isAscendent = !isAscendent;
+  console.log(tasksArray);
+}
+
+function handleOrderCreation(event) {
+  console.log(event);
+  orderTasks(tasksArray, ORDER_TYPES[1], isAscendent);
+  isAscendent = !isAscendent;
+  console.log(tasksArray);
+}
+
+function handleOrderAlphabetic(event) {
+  console.log(event);
+  orderTasks(tasksArray, ORDER_TYPES[0], isAscendent);
+  isAscendent = !isAscendent;
+  console.log(tasksArray);
+}
+
+$orderButtonDue.addEventListener("click", handleOrderDue);
+$orderButtonCreation.addEventListener("click", handleOrderCreation);
+$orderButtonAlphabetic.addEventListener("click", handleOrderAlphabetic);
+
 // Example of orderTasks
 console.log(tasksArray);
 orderTasks(tasksArray, ORDER_TYPES[0], true);
