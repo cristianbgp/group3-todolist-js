@@ -24,8 +24,6 @@ tasksArray = [
 
 console.log(tasksArray);
 
-//create based on task-creator branch
-
 function showTasks() {
   var length = tasksArray.length;
 
@@ -39,6 +37,5 @@ function showTasks() {
     //document.getElementById('Class').appendChild(entry);
     console.log(entry);
   }
-
   return true;
 }
