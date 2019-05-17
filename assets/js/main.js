@@ -22,16 +22,26 @@ const tasksArray = [
   }
 ];
 
-function createTask(description, due_date) {
+function createTask(description, dueDate) {
+  currentDate = new Date();
+  if (dueDate <= currentDate) return false;
+
   newTask = {
     description: description,
-    creation_date: new Date(),
-    due_date: due_date,
+    creation_date: currentDate,
+    due_date: dueDate,
     marked: false
   };
   tasksArray.push(newTask);
+  return true;
 }
 
-createTask("Hola", new Date());
+// // tests
+// var yesterdayDate = new Date();
+// yesterdayDate.setDate(yesterdayDate.getDate() - 1);
 
-console.log(tasksArray);
+// var tomorrowDate = new Date();
+// tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+
+// createTask("Hola", yesterdayDate); // should return false
+// createTask("Hola", tomorrowDate); // should return true
