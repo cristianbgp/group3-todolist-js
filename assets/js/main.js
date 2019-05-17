@@ -36,16 +36,6 @@ function createTask(description, dueDate) {
   return true;
 }
 
-// // tests
-// var yesterdayDate = new Date();
-// yesterdayDate.setDate(yesterdayDate.getDate() - 1);
-
-// var tomorrowDate = new Date();
-// tomorrowDate.setDate(tomorrowDate.getDate() + 1);
-
-// createTask("Hola", yesterdayDate); // should return false
-// createTask("Hola", tomorrowDate); // should return true
-
 function markTask(index) {
   tasksArray[index].marked = true;
 }
