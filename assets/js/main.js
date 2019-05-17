@@ -69,14 +69,15 @@ function showTasks() {
   var length = tasksArray.length;
   for (i = 0; i < length; i++) {
     var entry = document.createElement("li");
-    entry.className = "body__task";
+    entry.className = "task__item";
     entry.id = i;
     entry.innerHTML =
-      "<input type='radio'> <span>" +
+      "<input type='checkbox' class='task__checkbox' /><span class='task_description'>" +
       tasksArray[i].description +
-      "</span><input type='date'><input type='checkbox'>";
-    //document.getElementById("body__list").appendChild(entry);
-    console.log(entry);
+      "</span> <span class='task__date'>" +
+      tasksArray[i].dueDate +
+      " </span><input type='checkbox' class='task__priority' />";
+    document.getElementById("task_list").appendChild(entry);
   }
   return true;
 }
