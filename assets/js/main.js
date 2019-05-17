@@ -17,7 +17,7 @@ let tasksArray = [
   {
     description: "Update Cuchi",
     creationDate: new Date("2019-01-02"),
-    dueDate: new Date("2019-01-02"),
+    dueDate: new Date("2019-01-10"),
     marked: false
   }
 ];
@@ -36,17 +36,16 @@ function createTask(description, dueDate) {
   return true;
 }
 
-// // tests
-// var yesterdayDate = new Date();
-// yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+function markTask(index) {
+  tasksArray[index].marked = !tasksArray[index].marked;
+  return tasksArray[index].marked;
+}
 
-// var tomorrowDate = new Date();
-// tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+function destroyTask(index) {
+  tasksArray.splice(index, 1);
+}
 
-// createTask("Hola", yesterdayDate); // should return false
-// createTask("Hola", tomorrowDate); // should return true
-
-orderTypes = ["description", "creationDate", "dueDate"];
+const ORDER_TYPES = ["description", "creationDate", "dueDate"];
 
 function orderTasks(array, orderType, ascendent) {
   return (array = array.sort(function(a, b) {
@@ -81,7 +80,6 @@ function showTasks() {
   }
   return true;
 }
-showTasks();
 
 // // Example of orderTasks
 // console.log(tasksArray);
