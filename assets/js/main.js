@@ -83,33 +83,31 @@ const $orderButtonAlphabetic = document.getElementById("order-by-alphabetic");
 
 function handleOrderDue(event) {
   console.log(event);
-  orderTasks(tasksArray, ORDER_TYPES[2], isAscendent);
-  isAscendent = !isAscendent;
+  orderTasks(tasksArray, ORDER_TYPES[2], isAscendentDue);
+  isAscendentDue = !isAscendentDue;
   console.log(tasksArray);
+  showTasks();
 }
 
 function handleOrderCreation(event) {
   console.log(event);
-  orderTasks(tasksArray, ORDER_TYPES[1], isAscendent);
-  isAscendent = !isAscendent;
+  orderTasks(tasksArray, ORDER_TYPES[1], isAscendentCreation);
+  isAscendentCreation = !isAscendentCreation;
   console.log(tasksArray);
+  showTasks();
 }
 
 function handleOrderAlphabetic(event) {
   console.log(event);
-  orderTasks(tasksArray, ORDER_TYPES[0], isAscendent);
-  isAscendent = !isAscendent;
+  orderTasks(tasksArray, ORDER_TYPES[0], isAscendentAlphabetic);
+  isAscendentAlphabetic = !isAscendentAlphabetic;
   console.log(tasksArray);
+  showTasks();
 }
 
 $orderButtonDue.addEventListener("click", handleOrderDue);
 $orderButtonCreation.addEventListener("click", handleOrderCreation);
 $orderButtonAlphabetic.addEventListener("click", handleOrderAlphabetic);
-
-// Example of orderTasks
-console.log(tasksArray);
-orderTasks(tasksArray, ORDER_TYPES[0], true);
-console.log(tasksArray);
 
 function showTasks() {
   function formatDate(Date) {
