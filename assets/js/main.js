@@ -41,6 +41,11 @@ function markTask(index) {
   return tasksArray[index].marked;
 }
 
+function markTaskCallback(element) {
+  let index = element.parentElement.id;
+  markTask(index);
+}
+
 function destroyTask(index) {
   tasksArray.splice(index, 1);
 }
@@ -64,8 +69,3 @@ function orderTasks(array, orderType, ascendent) {
     }
   }));
 }
-
-// Example of orderTasks
-console.log(tasksArray);
-orderTasks(tasksArray, ORDER_TYPES[0], true);
-console.log(tasksArray);
