@@ -36,17 +36,15 @@ function createTask(description, dueDate) {
   return true;
 }
 
-// // tests
-// var yesterdayDate = new Date();
-// yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+function markTask(index) {
+  tasksArray[index].marked = true;
+}
 
-// var tomorrowDate = new Date();
-// tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+function unmarkTask(index) {
+  tasksArray[index].marked = false;
+}
 
-// createTask("Hola", yesterdayDate); // should return false
-// createTask("Hola", tomorrowDate); // should return true
-
-orderTypes = ["description", "creationDate", "dueDate"];
+const ORDER_TYPES = ["description", "creationDate", "dueDate"];
 
 function orderTasks(array, orderType, ascendent) {
   return (array = array.sort(function(a, b) {
@@ -68,5 +66,5 @@ function orderTasks(array, orderType, ascendent) {
 
 // Example of orderTasks
 console.log(tasksArray);
-orderTasks(tasksArray, orderTypes[0], true);
+orderTasks(tasksArray, ORDER_TYPES[0], true);
 console.log(tasksArray);
