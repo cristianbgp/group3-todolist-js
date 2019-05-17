@@ -23,24 +23,20 @@
     <div class="order_options">
       <span>Sort by:</span>
       <ul>
-        <li>Due Date <span>⇧</span><span>⇩</span></li>
-        <li>Creation Date<span>⇧</span><span>⇩</span></li>
-        <li>Alphabetic<span>⇧</span><span>⇩</span></li>
+        <li id="order-by-due">Due Date <span>⇧</span><span>⇩</span></li>
+        <li id="order-by-creation">
+          Creation Date<span>⇧</span><span>⇩</span>
+        </li>
+        <li id="order-by-alphabetic">Alphabetic<span>⇧</span><span>⇩</span></li>
       </ul>
     </div>
     <div class="body">
       <ul class="task" id="task_list">
-        <li class="task__item">
-          <input
-            type="checkbox"
-            class="task__checkbox"
-            id="id_ejemplo"
-            onclick="markTaskCallback(this);"
-          />
-          <span class="task_description">Tarea Ejemplo</span>
-          <span class="task__date">Today</span
-          ><input type="checkbox" class="task__priority" />
-        </li>
+        <!-- <li class="task__item">
+        <input type="checkbox" class="task__checkbox" id="id_ejemplo" onclick="markTaskCallback(this);" />
+        <span class="task_description">Tarea Ejemplo</span>
+        <span class="task__date">Today</span><input type="checkbox" class="task__priority" />
+      </li> -->
       </ul>
     </div>
     <div class="footer">

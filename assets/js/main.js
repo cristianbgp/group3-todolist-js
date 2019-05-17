@@ -6,7 +6,7 @@ let tasksArray = [
     description: "Study CSS",
     creationDate: new Date("2019-04-01"),
     dueDate: new Date("2019-01-05"),
-    marked: false
+    marked: true
   },
   {
     description: "Present miniassigment",
@@ -25,6 +25,35 @@ let tasksArray = [
 window.onload = function() {
   showTasks();
 };
+
+//steps to capture form in a Variable
+const $addForm = document.getElementById("newTaskForm");
+$addForm.addEventListener("submit", handleForm);
+
+function handleForm(event) {
+  event.preventDefault();
+  const $description = event.target.elements.descriptionTask.value;
+  const $dueDate = event.target.elements.dueDateTask.value;
+  let dateFormatted = new Date($dueDate);
+  createTask($description, dateFormatted);
+  switch (currentOrder) {
+    case "dueDate":
+      orderTasks(tasksArray, currentOrder, currentDirectionDue);
+      break;
+
+    case "creationDate":
+      orderTasks(tasksArray, currentOrder, currentDirectionCreation);
+      break;
+
+    case "description":
+      orderTasks(tasksArray, currentOrder, currentDirectionAlphabetic);
+      break;
+
+    default:
+      break;
+  }
+  showTasks();
+}
 
 function createTask(description, dueDate) {
   currentDate = new Date();
@@ -55,6 +84,10 @@ function destroyTask(index) {
 }
 
 const ORDER_TYPES = ["description", "creationDate", "dueDate"];
+let currentOrder = ORDER_TYPES[1];
+let currentDirectionDue = true;
+let currentDirectionCreation = true;
+let currentDirectionAlphabetic = true;
 
 function orderTasks(array, orderType, ascendent) {
   return (array = array.sort(function(a, b) {
@@ -62,13 +95,13 @@ function orderTasks(array, orderType, ascendent) {
       if (orderType === "creationDate" || orderType === "dueDate") {
         return new Date(a[orderType]) > new Date(b[orderType]) ? 1 : -1;
       } else {
-        return a[orderType] > b[orderType] ? 1 : -1;
+        return a[orderType].toLowerCase() > b[orderType].toLowerCase() ? 1 : -1;
       }
     } else {
       if (orderType === "creationDate" || orderType === "dueDate") {
         return new Date(b[orderType]) > new Date(a[orderType]) ? 1 : -1;
       } else {
-        return b[orderType] > a[orderType] ? 1 : -1;
+        return b[orderType].toLowerCase() > a[orderType].toLowerCase() ? 1 : -1;
       }
     }
   }));
@@ -83,18 +116,24 @@ const $orderButtonAlphabetic = document.getElementById("order-by-alphabetic");
 
 function handleOrderDue(event) {
   orderTasks(tasksArray, ORDER_TYPES[2], isAscendentDue);
+  currentOrder = ORDER_TYPES[2];
+  currentDirectionDue = isAscendentDue;
   isAscendentDue = !isAscendentDue;
   showTasks();
 }
 
 function handleOrderCreation(event) {
   orderTasks(tasksArray, ORDER_TYPES[1], isAscendentCreation);
+  currentOrder = ORDER_TYPES[1];
+  currentDirectionCreation = isAscendentCreation;
   isAscendentCreation = !isAscendentCreation;
   showTasks();
 }
 
 function handleOrderAlphabetic(event) {
   orderTasks(tasksArray, ORDER_TYPES[0], isAscendentAlphabetic);
+  currentOrder = ORDER_TYPES[0];
+  currentDirectionAlphabetic = isAscendentAlphabetic;
   isAscendentAlphabetic = !isAscendentAlphabetic;
   showTasks();
 }
@@ -104,17 +143,24 @@ $orderButtonCreation.addEventListener("click", handleOrderCreation);
 $orderButtonAlphabetic.addEventListener("click", handleOrderAlphabetic);
 
 function showTasks() {
-  function formatDate(Date) {
-    age += years;
-    console.log(age);
+  //clear task_list
+  var e = document.getElementById("task_list");
+  var child = e.lastElementChild;
+  while (child) {
+    e.removeChild(child);
+    child = e.lastElementChild;
   }
+
+  //fill task_list
   var length = tasksArray.length;
   for (i = 0; i < length; i++) {
     var entry = document.createElement("li");
     entry.className = "task__item";
     entry.id = i;
     entry.innerHTML =
-      "<input type='checkbox' class='task__checkbox' onclick='markTaskCallback(this);'/><span class='task_description'>" +
+      "<input type='checkbox' onClick='markTaskCallback(this);'" +
+      (tasksArray[i].marked ? "checked>" : ">") +
+      "<span class='task_description'>" +
       tasksArray[i].description +
       "</span> <span class='task__date'>" +
       tasksArray[i].dueDate.toDateString() +
@@ -123,8 +169,3 @@ function showTasks() {
   }
   return true;
 }
-
-// // Example of orderTasks
-// console.log(tasksArray);
-// orderTasks(tasksArray, orderTypes[0], true);
-// console.log(tasksArray);
