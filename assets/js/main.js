@@ -23,3 +23,22 @@ tasksArray = [
 ];
 
 console.log(tasksArray);
+
+//create based on task-creator branch
+
+function showTasks() {
+  var length = tasksArray.length;
+
+  for (i = 0; i < length; i++) {
+    var entry = document.createElement("ul");
+    entry.className = "body__task";
+    entry.innerHTML =
+      "<input type='radio'> " +
+      tasksArray[i].description +
+      " <input type='checkbox'>";
+    //document.getElementById('Class').appendChild(entry);
+    console.log(entry);
+  }
+
+  return true;
+}
