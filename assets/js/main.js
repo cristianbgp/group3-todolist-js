@@ -40,9 +40,14 @@ function createTask(description, dueDate) {
   return true;
 }
 
-function markTask(index) {
+function toggleTask(index) {
   tasksArray[index].marked = !tasksArray[index].marked;
   return tasksArray[index].marked;
+}
+
+function markTaskCallback(element) {
+  let index = element.parentElement.id;
+  toggleTask(index);
 }
 
 function destroyTask(index) {
@@ -80,7 +85,7 @@ function showTasks() {
     entry.className = "task__item";
     entry.id = i;
     entry.innerHTML =
-      "<input type='checkbox' class='task__checkbox' /><span class='task_description'>" +
+      "<input type='checkbox' class='task__checkbox' onclick='markTaskCallback(this);'/><span class='task_description'>" +
       tasksArray[i].description +
       "</span> <span class='task__date'>" +
       tasksArray[i].dueDate.toDateString() +
