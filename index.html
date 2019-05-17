@@ -12,27 +12,25 @@
 </head>
 
 <body>
-  <div class="header" id="myList">
+  <div class="header">
     <div class="header__options"><i class="fas fa-sliders-h"></i></div>
     <h1 class="header__title">My To Do List</h1>
     <h2 class="header__date">Thursday, May 16th</h2>
   </div>
+  <div class="order_options">
+    <span>Sort by:</span>
+    <ul>
+      <li>Due Date <span>⇧</span><span>⇩</span></li>
+      <li>Creation Date<span>⇧</span><span>⇩</span></li>
+      <li>Alphabetic<span>⇧</span><span>⇩</span></li>
+    </ul>
+  </div>
   <div class="body">
-    <ul class="task" id="tasksList">
+    <ul class="task" id="task_list">
       <li class="task__item">
-        <input type="checkbox" class="task__checkbox" />
-        <span class="task_description">Download files</span>
+        <input type="checkbox" class="task__checkbox" id="id_ejemplo" />
+        <span class="task_description">Tarea Ejemplo</span>
         <span class="task__date">Today</span><input type="checkbox" class="task__priority" />
-      </li>
-      <li class="task__item">
-        <input type="checkbox" class="task__checkbox" />
-        <span class="task_description">Make code review</span>
-        <span class="task__date">Tomorrow</span><input type="checkbox" class="task__priority" />
-      </li>
-      <li class="task__item">
-        <input type="checkbox" class="task__checkbox" />
-        <span class="task_description">Accept pull request</span>
-        <span class="task__date">05/17/2019</span><input type="checkbox" class="task__priority" />
       </li>
     </ul>
   </div>
@@ -44,7 +42,6 @@
       <input type="submit" value="Add" class="form__submit" id="submit-button" />
     </form>
   </div>
-
   <script src="./assets/js/main.js"></script>
 </body>
 

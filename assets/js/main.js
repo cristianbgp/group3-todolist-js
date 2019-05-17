@@ -6,6 +6,7 @@ function handleList(event) {
   const $duedate = event.target.elements.due.value;
   let date = new Date($duedate)
   createTask($description, date);
+  showTasks();
 };
 
 $addForm.addEventListener("submit", handleList);
@@ -16,23 +17,27 @@ $addForm.addEventListener("submit", handleList);
 let tasksArray = [
   {
     description: "Study CSS",
-    creationDate: new Date("2019-01-01"),
+    creationDate: new Date("2019-04-01"),
     dueDate: new Date("2019-01-05"),
     marked: false
   },
   {
     description: "Present miniassigment",
-    creationDate: new Date("2019-01-03"),
-    dueDate: new Date("2019-01-02"),
+    creationDate: new Date("2019-04-03"),
+    dueDate: new Date("2019-01-17"),
     marked: false
   },
   {
     description: "Update Cuchi",
-    creationDate: new Date("2019-01-02"),
-    dueDate: new Date("2019-01-10"),
+    creationDate: new Date("2019-04-02"),
+    dueDate: new Date("2019-01-19"),
     marked: false
   }
 ];
+
+window.onload = function () {
+  showTasks();
+};
 
 function createTask(description, dueDate) {
   currentDate = new Date();
@@ -60,7 +65,7 @@ function destroyTask(index) {
 const ORDER_TYPES = ["description", "creationDate", "dueDate"];
 
 function orderTasks(array, orderType, ascendent) {
-  return (array = array.sort(function(a, b) {
+  return (array = array.sort(function (a, b) {
     if (ascendent) {
       if (orderType === "creationDate" || orderType === "dueDate") {
         return new Date(a[orderType]) > new Date(b[orderType]) ? 1 : -1;
@@ -77,7 +82,28 @@ function orderTasks(array, orderType, ascendent) {
   }));
 }
 
-// Example of orderTasks
-console.log(tasksArray);
-orderTasks(tasksArray, ORDER_TYPES[0], true);
-console.log(tasksArray);
+function showTasks() {
+  function formatDate(Date) {
+    age += years;
+    console.log(age);
+  }
+  var length = tasksArray.length;
+  for (i = 0; i < length; i++) {
+    var entry = document.createElement("li");
+    entry.className = "task__item";
+    entry.id = i;
+    entry.innerHTML =
+      "<input type='checkbox' class='task__checkbox' /><span class='task_description'>" +
+      tasksArray[i].description +
+      "</span> <span class='task__date'>" +
+      tasksArray[i].dueDate.toDateString() +
+      " </span><input type='checkbox' class='task__priority' />";
+    document.getElementById("task_list").appendChild(entry);
+  }
+  return true;
+}
+
+// // Example of orderTasks
+// console.log(tasksArray);
+// orderTasks(tasksArray, orderTypes[0], true);
+// console.log(tasksArray);
