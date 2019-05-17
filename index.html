@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>ToDoList</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-      crossorigin="anonymous"
-    />
-  </head>
 
-  <body>
-    <div class="header">
-      <div class="header__options"><i class="fas fa-sliders-h"></i></div>
-      <h1 class="header__title">My To Do List</h1>
-      <h2 class="header__date">Thursday, May 16th</h2>
-    </div>
-    <div class="body">
-      <ul class="task">
-        <li class="task__item">
-          <input type="checkbox" class="task__checkbox" />
-          <span class="task_description">Download files</span>
-          <span class="task__date">Today</span
-          ><input type="checkbox" class="task__priority" />
-        </li>
-        <li class="task__item">
-          <input type="checkbox" class="task__checkbox" />
-          <span class="task_description">Make code review</span>
-          <span class="task__date">Tomorrow</span
-          ><input type="checkbox" class="task__priority" />
-        </li>
-        <li class="task__item">
-          <input type="checkbox" class="task__checkbox" />
-          <span class="task_description">Accept pull request</span>
-          <span class="task__date">05/17/2019</span
-          ><input type="checkbox" class="task__priority" />
-        </li>
-      </ul>
-    </div>
-    <div class="footer">
-      <form class="form">
-        <button class="form__arrow"><i class="fas fa-chevron-up"></i></button>
-        <input type="text" placeholder="Add new task here" class="form__task" />
-        <input type="date" class="form__date" />
-        <input type="submit" value="Add" class="form__submit" />
-      </form>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>ToDoList</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+</head>
 
-    <script src="./assets/js/main.js"></script>
-  </body>
+<body>
+  <div class="header" id="myList">
+    <div class="header__options"><i class="fas fa-sliders-h"></i></div>
+    <h1 class="header__title">My To Do List</h1>
+    <h2 class="header__date">Thursday, May 16th</h2>
+  </div>
+  <div class="body">
+    <ul class="task" id="tasksList">
+      <li class="task__item">
+        <input type="checkbox" class="task__checkbox" />
+        <span class="task_description">Download files</span>
+        <span class="task__date">Today</span><input type="checkbox" class="task__priority" />
+      </li>
+      <li class="task__item">
+        <input type="checkbox" class="task__checkbox" />
+        <span class="task_description">Make code review</span>
+        <span class="task__date">Tomorrow</span><input type="checkbox" class="task__priority" />
+      </li>
+      <li class="task__item">
+        <input type="checkbox" class="task__checkbox" />
+        <span class="task_description">Accept pull request</span>
+        <span class="task__date">05/17/2019</span><input type="checkbox" class="task__priority" />
+      </li>
+    </ul>
+  </div>
+  <div class="footer">
+    <form class="form" id="format">
+      <button class="form__arrow"><i class="fas fa-chevron-up"></i></button>
+      <input type="text" placeholder="Add new task here" class="form__task" name="desc" />
+      <input type="date" class="form__date" name="due" />
+      <input type="submit" value="Add" class="form__submit" id="submit-button" />
+    </form>
+  </div>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+
 </html>
