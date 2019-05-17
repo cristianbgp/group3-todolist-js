@@ -82,26 +82,20 @@ const $orderButtonCreation = document.getElementById("order-by-creation");
 const $orderButtonAlphabetic = document.getElementById("order-by-alphabetic");
 
 function handleOrderDue(event) {
-  console.log(event);
   orderTasks(tasksArray, ORDER_TYPES[2], isAscendentDue);
   isAscendentDue = !isAscendentDue;
-  console.log(tasksArray);
   showTasks();
 }
 
 function handleOrderCreation(event) {
-  console.log(event);
   orderTasks(tasksArray, ORDER_TYPES[1], isAscendentCreation);
   isAscendentCreation = !isAscendentCreation;
-  console.log(tasksArray);
   showTasks();
 }
 
 function handleOrderAlphabetic(event) {
-  console.log(event);
   orderTasks(tasksArray, ORDER_TYPES[0], isAscendentAlphabetic);
   isAscendentAlphabetic = !isAscendentAlphabetic;
-  console.log(tasksArray);
   showTasks();
 }
 

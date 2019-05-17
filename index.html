@@ -23,11 +23,9 @@
     <div class="order_options">
       <span>Sort by:</span>
       <ul>
-        <li id="order-by-due">Due Date <span>⇧</span><span>⇩</span></li>
-        <li id="order-by-creation">
-          Creation Date<span>⇧</span><span>⇩</span>
-        </li>
-        <li id="order-by-alphabetic">Alphabetic<span>⇧</span><span>⇩</span></li>
+        <li>Due Date <span>⇧</span><span>⇩</span></li>
+        <li>Creation Date<span>⇧</span><span>⇩</span></li>
+        <li>Alphabetic<span>⇧</span><span>⇩</span></li>
       </ul>
     </div>
     <div class="body">
@@ -46,14 +44,23 @@
       </ul>
     </div>
     <div class="footer">
-      <form class="form">
+      <form class="form" id="newTaskForm">
         <button class="form__arrow"><i class="fas fa-chevron-up"></i></button>
-        <input type="text" placeholder="Add new task here" class="form__task" />
-        <input type="date" class="form__date" />
-        <input type="submit" value="Add" class="form__submit" />
+        <input
+          type="text"
+          placeholder="Add new task here"
+          class="form__task"
+          name="descriptionTask"
+        />
+        <input type="date" class="form__date" name="dueDateTask" />
+        <input
+          type="submit"
+          value="Add"
+          class="form__submit"
+          id="submit-button"
+        />
       </form>
     </div>
-
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
