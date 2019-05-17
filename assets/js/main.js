@@ -1,15 +1,14 @@
-const $addForm = document.getElementById("format");
-function handleList(event) {
+const $addForm = document.getElementById("newTaskForm");
+function handleForm(event) {
   event.preventDefault();
-  console.log(event)
-  const $description = event.target.elements.desc.value;
-  const $duedate = event.target.elements.due.value;
-  let date = new Date($duedate)
-  createTask($description, date);
+  const $description = event.target.elements.descriptionTask.value;
+  const $dueDate = event.target.elements.dueDateTask.value;
+  let dateFormatted = new Date($dueDate);
+  createTask($description, dateFormatted);
   showTasks();
 };
 
-$addForm.addEventListener("submit", handleList);
+$addForm.addEventListener("submit", handleForm);
 
 // this is our initial data
 // the format of the date is yyyy-mm-dd
