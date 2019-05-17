@@ -94,3 +94,8 @@ function showTasks() {
   }
   return true;
 }
+
+// // Example of orderTasks
+// console.log(tasksArray);
+// orderTasks(tasksArray, orderTypes[0], true);
+// console.log(tasksArray);
