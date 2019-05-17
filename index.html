@@ -18,17 +18,20 @@
     <h2 class="header__date">Thursday, May 16th</h2>
   </div>
   <div class="body">
-    <ol class="body__list">
-      <ul class="body__task">
-        <input type="radio">Download files<input type="checkbox">
-      </ul>
-      <ul class="body__task">
-        <input type="radio">Make code review<input type="checkbox">
-      </ul>
-      <ul class="body__task">
-        <input type="radio">Accept pull request<input type="checkbox">
-      </ul>
-    </ol>
+    <ul class="body__list">
+      <li class="body__task">
+        <input type="radio">
+        <span>Download files</span><input type="date"><input type="checkbox">
+      </li>
+      <li class="body__task">
+        <input type="radio">
+        <span>Make code review</span><input type="date"><input type="checkbox">
+      </li>
+      <li class="body__task">
+        <input type="radio">
+        <span>Accept pull request</span><input type="date"><input type="checkbox">
+      </li>
+    </ul>
   </div>
   <div class="footer">
     <form class="form"></form>
@@ -36,7 +39,5 @@
     <input type="text" placeholder="Add new task here" class="form__task">
     <input type="date" class="form__date">
   </div>
-  <script src="./assets/js/main.js"></script>
-</body>
 
 </html>
