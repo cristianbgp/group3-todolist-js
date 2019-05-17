@@ -46,7 +46,15 @@ function createTask(description, dueDate) {
 // createTask("Hola", yesterdayDate); // should return false
 // createTask("Hola", tomorrowDate); // should return true
 
-orderTypes = ["description", "creationDate", "dueDate"];
+function markTask(index) {
+  tasksArray[index].marked = true;
+}
+
+function unmarkTask(index) {
+  tasksArray[index].marked = false;
+}
+
+const ORDER_TYPES = ["description", "creationDate", "dueDate"];
 
 function orderTasks(array, orderType, ascendent) {
   return (array = array.sort(function(a, b) {
@@ -68,5 +76,5 @@ function orderTasks(array, orderType, ascendent) {
 
 // Example of orderTasks
 console.log(tasksArray);
-orderTasks(tasksArray, orderTypes[0], true);
+orderTasks(tasksArray, ORDER_TYPES[0], true);
 console.log(tasksArray);
