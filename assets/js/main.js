@@ -1,15 +1,3 @@
-const $addForm = document.getElementById("newTaskForm");
-function handleForm(event) {
-  event.preventDefault();
-  const $description = event.target.elements.descriptionTask.value;
-  const $dueDate = event.target.elements.dueDateTask.value;
-  let dateFormatted = new Date($dueDate);
-  createTask($description, dateFormatted);
-  showTasks();
-};
-
-$addForm.addEventListener("submit", handleForm);
-
 // this is our initial data
 // the format of the date is yyyy-mm-dd
 
@@ -34,9 +22,22 @@ let tasksArray = [
   }
 ];
 
-window.onload = function () {
+window.onload = function() {
   showTasks();
 };
+
+//steps to capture form in a Variable
+const $addForm = document.getElementById("newTaskForm");
+$addForm.addEventListener("submit", handleForm);
+
+function handleForm(event) {
+  event.preventDefault();
+  const $description = event.target.elements.descriptionTask.value;
+  const $dueDate = event.target.elements.dueDateTask.value;
+  let dateFormatted = new Date($dueDate);
+  createTask($description, dateFormatted);
+  showTasks();
+}
 
 function createTask(description, dueDate) {
   currentDate = new Date();
@@ -69,7 +70,7 @@ function destroyTask(index) {
 const ORDER_TYPES = ["description", "creationDate", "dueDate"];
 
 function orderTasks(array, orderType, ascendent) {
-  return (array = array.sort(function (a, b) {
+  return (array = array.sort(function(a, b) {
     if (ascendent) {
       if (orderType === "creationDate" || orderType === "dueDate") {
         return new Date(a[orderType]) > new Date(b[orderType]) ? 1 : -1;
