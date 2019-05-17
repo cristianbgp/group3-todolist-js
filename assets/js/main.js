@@ -45,7 +45,7 @@ function unmarkTask(index) {
 }
 
 function destroyTask(index) {
-  tasksArray[index].splice(index, 1);
+  tasksArray.splice(index, 1);
 }
 
 const ORDER_TYPES = ["description", "creationDate", "dueDate"];
