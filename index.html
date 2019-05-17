@@ -18,18 +18,21 @@
     <h2 class="header__date">Thursday, May 16th</h2>
   </div>
   <div class="body">
-    <ul class="body__list">
-      <li class="body__task">
-        <input type="radio">
-        <span>Download files</span><input type="date"><input type="checkbox">
+    <ul class="task">
+      <li class="task__item">
+        <input type="checkbox" class="task__checkbox">
+        <span class="task_description">Download files</span>
+        <span class="task__date">Today</span><input type="checkbox" class="task__priority">
       </li>
-      <li class="body__task">
-        <input type="radio">
-        <span>Make code review</span><input type="date"><input type="checkbox">
+      <li class="task__item">
+        <input type="checkbox" class="task__checkbox">
+        <span class=" task_description">Make code review</span>
+        <span class="task__date">Tomorrow</span><input type="checkbox" class="task__priority">
       </li>
-      <li class="body__task">
-        <input type="radio">
-        <span>Accept pull request</span><input type="date"><input type="checkbox">
+      <li class="task__item">
+        <input type="checkbox" class="task__checkbox">
+        <span class="task_description">Accept pull request</span>
+        <span class="task__date">05/17/2019</span><input type="checkbox" class="task__priority">
       </li>
     </ul>
   </div>
@@ -38,7 +41,7 @@
       <button class="form__arrow"><i class="fas fa-chevron-up"></i></button>
       <input type="text" placeholder="Add new task here" class="form__task">
       <input type="date" class="form__date">
-      <input type="submit" value="New" class="submission" />
+      <input type="submit" value="Add" class="form__submit" />
     </form>
   </div>
 

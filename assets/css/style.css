@@ -21,3 +21,10 @@ h1 {
   width: 100%;
   background: blue;
 }
+
+.task__item {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
