@@ -14,7 +14,7 @@
     />
   </head>
 
-  <body>
+  <body onload="showTasks()">
     <div class="header">
       <div class="header__options"><i class="fas fa-sliders-h"></i></div>
       <h1 class="header__title">My To Do List</h1>
@@ -23,21 +23,9 @@
     <div class="body">
       <ul class="task" id="task_list">
         <li class="task__item">
-          <input type="checkbox" class="task__checkbox" />
-          <span class="task_description">Download files</span>
+          <input type="checkbox" class="task__checkbox" id="id_ejemplo" />
+          <span class="task_description">Tarea Ejemplo</span>
           <span class="task__date">Today</span
-          ><input type="checkbox" class="task__priority" />
-        </li>
-        <li class="task__item">
-          <input type="checkbox" class="task__checkbox" />
-          <span class="task_description">Make code review</span>
-          <span class="task__date">Tomorrow</span
-          ><input type="checkbox" class="task__priority" />
-        </li>
-        <li class="task__item">
-          <input type="checkbox" class="task__checkbox" />
-          <span class="task_description">Accept pull request</span>
-          <span class="task__date">05/17/2019</span
           ><input type="checkbox" class="task__priority" />
         </li>
       </ul>

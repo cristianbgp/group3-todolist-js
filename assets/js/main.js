@@ -75,7 +75,7 @@ function showTasks() {
       "<input type='checkbox' class='task__checkbox' /><span class='task_description'>" +
       tasksArray[i].description +
       "</span> <span class='task__date'>" +
-      tasksArray[i].dueDate +
+      tasksArray[i].dueDate.toDateString() +
       " </span><input type='checkbox' class='task__priority' />";
     document.getElementById("task_list").appendChild(entry);
   }
