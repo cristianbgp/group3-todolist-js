@@ -49,7 +49,7 @@ function createTask(description, dueDate) {
 orderTypes = ["description", "creationDate", "dueDate"];
 
 function orderTasks(array, orderType, ascendent) {
-  return array.sort(function(a, b) {
+  return (array = array.sort(function(a, b) {
     if (ascendent) {
       if (orderType === "creationDate" || orderType === "dueDate") {
         return new Date(a[orderType]) > new Date(b[orderType]) ? 1 : -1;
@@ -63,8 +63,10 @@ function orderTasks(array, orderType, ascendent) {
         return b[orderType] > a[orderType] ? 1 : -1;
       }
     }
-  });
+  }));
 }
 
-tasksArray = orderTasks(tasksArray, orderTypes[0], true);
+// Example of orderTasks
+console.log(tasksArray);
+orderTasks(tasksArray, orderTypes[0], true);
 console.log(tasksArray);
