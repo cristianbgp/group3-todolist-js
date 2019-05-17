@@ -40,9 +40,14 @@ function createTask(description, dueDate) {
   return true;
 }
 
-function markTask(index) {
+function toggleTask(index) {
   tasksArray[index].marked = !tasksArray[index].marked;
   return tasksArray[index].marked;
+}
+
+function markTaskCallback(element) {
+  let index = element.parentElement.id;
+  toggleTask(index);
 }
 
 function destroyTask(index) {
@@ -85,7 +90,7 @@ function showTasks() {
     entry.className = "task__item";
     entry.id = i;
     entry.innerHTML =
-      "<input type='checkbox' class='task__checkbox'" +
+      "<input type='checkbox' class='markTaskCallback(this);'" +
       (tasksArray[i].marked ? "checked>" : ">") +
       "<span class='task_description'>" +
       tasksArray[i].description +
@@ -96,8 +101,3 @@ function showTasks() {
   }
   return true;
 }
-
-// // Example of orderTasks
-// console.log(tasksArray);
-// orderTasks(tasksArray, orderTypes[0], true);
-// console.log(tasksArray);
