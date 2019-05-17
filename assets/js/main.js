@@ -36,20 +36,6 @@ function createTask(description, dueDate) {
   return true;
 }
 
-function showTasks() {
-  var length = tasksArray.length;
-  for (i = 0; i < length; i++) {
-    var entry = document.createElement("li");
-    entry.className = "body__task";
-    entry.innerHTML =
-      "<input type='radio'> <span>" +
-      tasksArray[i].description +
-      "</span><input type='date'><input type='checkbox'>";
-    //document.getElementById("body__list").appendChild(entry);
-  }
-  return true;
-}
-
 // // tests
 // var yesterdayDate = new Date();
 // yesterdayDate.setDate(yesterdayDate.getDate() - 1);
@@ -80,7 +66,24 @@ function orderTasks(array, orderType, ascendent) {
   }));
 }
 
-// Example of orderTasks
-console.log(tasksArray);
-orderTasks(tasksArray, orderTypes[0], true);
-console.log(tasksArray);
+function showTasks() {
+  var length = tasksArray.length;
+  for (i = 0; i < length; i++) {
+    var entry = document.createElement("li");
+    entry.className = "body__task";
+    entry.id = i;
+    entry.innerHTML =
+      "<input type='radio'> <span>" +
+      tasksArray[i].description +
+      "</span><input type='date'><input type='checkbox'>";
+    //document.getElementById("body__list").appendChild(entry);
+    console.log(entry);
+  }
+  return true;
+}
+showTasks();
+
+// // Example of orderTasks
+// console.log(tasksArray);
+// orderTasks(tasksArray, orderTypes[0], true);
+// console.log(tasksArray);
