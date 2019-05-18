@@ -62,12 +62,29 @@ h1 {
   background-color: #fbfbff;
   border: 1px solid #a09d9d;
   border-radius: 0.5em;
+  transition-property: all;
+  transition-duration: 0.3s;
+  animation-name: fadeInDown;
+  animation-duration: 0.5s;
 }
 
 .task__item.marked {
   background-color: #f3f1f1;
+  color: #808080;
   text-decoration: line-through;
   border: none;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .task_description {
