@@ -49,3 +49,33 @@ h1 {
   border: 1px solid black;
 }
 
+.header__options {
+  background: #141414;
+  width: 200px;
+  height: 100px;
+  color: #999;
+}
+
+.header__button {
+  border: none;
+  background: #141414;
+  font-size: 20px;
+  display: block;
+  letter-spacing: 1px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  color: #999;
+}
+
+.header__button:hover {
+  color: white;
+}
+
+.order__arrows {
+  cursor: pointer;
+}
+
+.order__arrows:hover {
+  color: white;
+}
