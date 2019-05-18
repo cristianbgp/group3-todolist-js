@@ -83,6 +83,8 @@ function toggleTask(index) {
 
 function markTaskCallback(element) {
   let index = element.parentElement.id;
+  let parent = element.parentElement;
+  parent.classList.toggle("marked");
   toggleTask(index);
 }
 
@@ -167,11 +169,14 @@ function showTasks() {
     entry.innerHTML =
       "<input type='checkbox' onClick='markTaskCallback(this);'" +
       (tasksArray[i].marked ? "checked>" : ">") +
-      "<span class='task_description'>" +
+      "<div class='task__item__content'><span class='task_description'>" +
       tasksArray[i].description +
-      "</span> <span class='task__date'>" +
+      "</span> <span class='task__date'><i class='far fa-clock'></i> " +
       tasksArray[i].dueDate.toDateString() +
-      " </span><input type='checkbox' class='task__priority' />";
+      " </span></div><input type='checkbox' class='task__priority' />";
+    if (tasksArray[i].marked) {
+      entry.className += " marked";
+    }
     document.getElementById("task_list").appendChild(entry);
   }
   return true;
