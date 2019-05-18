@@ -22,7 +22,7 @@ let tasksArray = [
   }
 ];
 
-window.onload = function() {
+window.onload = function () {
   showTasks();
   get_tomorrow = tomorrow();
   document.getElementById("task_date").value = get_tomorrow;
@@ -97,7 +97,7 @@ let currentDirectionCreation = true;
 let currentDirectionAlphabetic = true;
 
 function orderTasks(array, orderType, ascendent) {
-  return (array = array.sort(function(a, b) {
+  return (array = array.sort(function (a, b) {
     if (ascendent) {
       if (orderType === "creationDate" || orderType === "dueDate") {
         return new Date(a[orderType]) > new Date(b[orderType]) ? 1 : -1;
@@ -188,4 +188,13 @@ function tomorrow() {
   if (day < 10) day = "0" + day;
   tomorrow = year + "-" + month + "-" + day;
   return tomorrow;
+}
+
+function showDiv() {
+  var x = document.getElementById("appear");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 }
