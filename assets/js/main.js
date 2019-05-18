@@ -24,7 +24,9 @@ let tasksArray = [
 
 window.onload = function() {
   showTasks();
-  document.getElementById("task_date").value = tomorrow();
+  get_tomorrow = tomorrow();
+  document.getElementById("task_date").value = get_tomorrow;
+  document.getElementById("task_date").setAttribute("min", get_tomorrow);
 };
 
 //steps to capture form in a Variable
