@@ -24,6 +24,7 @@ let tasksArray = [
 
 window.onload = function() {
   showTasks();
+  document.getElementById("task_date").value = tomorrow();
 };
 
 //steps to capture form in a Variable
@@ -32,10 +33,14 @@ $addForm.addEventListener("submit", handleForm);
 
 function handleForm(event) {
   event.preventDefault();
+
   const $description = event.target.elements.descriptionTask.value;
-  const $dueDate = event.target.elements.dueDateTask.value;
+  const $dueDate = document.getElementById("task_date").value;
   let dateFormatted = new Date($dueDate);
-  createTask($description, dateFormatted);
+  var tomorrow = new Date();
+  tomorrow.setDate(dateFormatted.getDate() + 1);
+  createTask($description, tomorrow);
+
   switch (currentOrder) {
     case "dueDate":
       orderTasks(tasksArray, currentOrder, currentDirectionDue);
@@ -168,4 +173,17 @@ function showTasks() {
     document.getElementById("task_list").appendChild(entry);
   }
   return true;
+}
+
+//default date form is tomorrow
+function tomorrow() {
+  var date = new Date();
+  var day = date.getDate() + 1;
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+  tomorrow = year + "-" + month + "-" + day;
+  return tomorrow;
 }
