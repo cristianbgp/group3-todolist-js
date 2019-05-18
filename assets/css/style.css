@@ -100,3 +100,8 @@ h1 {
 .task__priority {
   display: none;
 }
+
+.priority-handler {
+  cursor: pointer;
+  font-size: 2em;
+}

@@ -6,19 +6,22 @@ let tasksArray = [
     description: "Study CSS",
     creationDate: new Date("2019-04-01"),
     dueDate: new Date("2019-01-05"),
-    marked: true
+    marked: true,
+    priority: false
   },
   {
     description: "Present miniassigment",
     creationDate: new Date("2019-04-03"),
     dueDate: new Date("2019-01-17"),
-    marked: false
+    marked: false,
+    priority: true
   },
   {
     description: "Update Cuchi",
     creationDate: new Date("2019-04-02"),
     dueDate: new Date("2019-01-19"),
-    marked: false
+    marked: false,
+    priority: false
   }
 ];
 
@@ -70,7 +73,8 @@ function createTask(description, dueDate) {
     description: description,
     creationDate: currentDate,
     dueDate: dueDate,
-    marked: false
+    marked: false,
+    priority: false
   };
   tasksArray.push(newTask);
   return true;
@@ -90,6 +94,19 @@ function markTaskCallback(element) {
 
 function destroyTask(index) {
   tasksArray.splice(index, 1);
+}
+
+function togglePriority(index) {
+  tasksArray[index].priority = !tasksArray[index].priority;
+}
+
+function markPriorityCallback(element) {
+  let index = element.parentElement.parentElement.id;
+  togglePriority(index);
+  let starTrue = "&#9733;";
+  let starFalse = "&#9734;";
+  let starIcon = tasksArray[index].priority ? starTrue : starFalse;
+  element.parentElement.innerHTML = element.outerHTML + starIcon;
 }
 
 const ORDER_TYPES = ["description", "creationDate", "dueDate"];
@@ -173,7 +190,9 @@ function showTasks() {
       tasksArray[i].description +
       "</span> <span class='task__date'><i class='far fa-clock'></i> " +
       tasksArray[i].dueDate.toDateString() +
-      " </span></div><input type='checkbox' class='task__priority' />";
+      "</span></div><label class='priority-handler'><input type='checkbox' class='task__priority' onClick='markPriorityCallback(this);' />" +
+      (tasksArray[i].priority ? "&#9733;" : "&#9734;") +
+      "</label>";
     if (tasksArray[i].marked) {
       entry.className += " marked";
     }
