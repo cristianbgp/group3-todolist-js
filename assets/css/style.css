@@ -50,6 +50,7 @@ h1 {
 /* footer */
 .footer {
   width: 100vw;
+  height: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   color: white;
@@ -58,7 +59,7 @@ h1 {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   overflow: auto;
-  height: 100%;
+  /* position */
 }
 .form__arrow {
   display: block;
@@ -79,14 +80,14 @@ h1 {
     color: white;
   }
   to {
-    background-color: gray;
+    background-color: #3d3d3d;
     color: black;
   }
 }
 
 @keyframes color_unchange {
   from {
-    background-color: gray;
+    background-color: #3d3d3d;
     color: black;
   }
   to {
@@ -109,13 +110,14 @@ h1 {
 }
 .footer_date {
   margin-bottom: 1em;
-  display: flex;
+  display: none;
+  /*  display: none; */
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-.form__arrow input[type="text"],
-.form__arrow input[type="date"] {
+.footer input[type="text"],
+.footer input[type="date"] {
   box-sizing: border-box;
   border: 1px solid #bebebe;
   padding: 7px;
@@ -124,8 +126,22 @@ h1 {
   outline: none;
 }
 
-.form__arrow input[type="text"]:focus,
-.form__arrow input[type="date"]:focus {
+.footer input[type="text"]:focus,
+.footer input[type="date"]:focus {
   box-shadow: 0 0 8px #88d5e9;
   border: 1px solid #88d5e9;
+}
+
+.footer input[type="submit"],
+.footer input[type="button"] {
+  background: gray;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  color: black;
+}
+
+.footer input[type="submit"]:hover,
+.footer input[type="button"]:hover {
+  background: white;
+  box-shadow: none;
 }

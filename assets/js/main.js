@@ -189,3 +189,11 @@ function tomorrow() {
   tomorrow = year + "-" + month + "-" + day;
   return tomorrow;
 }
+
+document.querySelector(".form__arrow").addEventListener("click", function() {
+  if (document.querySelector(".footer_date").style.display == "none") {
+    document.querySelector(".footer_date").style.display = "flex";
+  } else {
+    document.querySelector(".footer_date").style.display = "none";
+  }
+});
