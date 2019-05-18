@@ -2,10 +2,13 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* suavizado de bordes */
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  width: 1100px;
+  width: 100vw;
+  font-family: "Segoe", "Segoe UI", "Arial", "sans-serif";
 }
 
 h1 {
@@ -37,14 +40,92 @@ h1 {
 /* .body {
 } */
 
-.footer {
-  width: 100%;
-}
-
 .task__item {
   height: 100px;
   margin: 40px;
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
+}
+/* footer */
+.footer {
+  width: 100vw;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+  background-color: black;
+  animation-name: color_unchange;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  overflow: auto;
+  height: 100%;
+}
+.form__arrow {
+  display: block;
+  font-weight: bolder;
+  text-align: center;
+  justify-content: center;
+  padding-top: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.form__task {
+  font-size: 15px;
+}
+
+@keyframes color_change {
+  from {
+    background-color: black;
+    color: white;
+  }
+  to {
+    background-color: gray;
+    color: black;
+  }
+}
+
+@keyframes color_unchange {
+  from {
+    background-color: gray;
+    color: black;
+  }
+  to {
+    background-color: black;
+    color: white;
+  }
+}
+
+.footer:hover,
+.form__arrow:active {
+  animation-name: color_change;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.footer_main {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.footer_date {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.form__arrow input[type="text"],
+.form__arrow input[type="date"] {
+  box-sizing: border-box;
+  border: 1px solid #bebebe;
+  padding: 7px;
+  margin: 0px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+.form__arrow input[type="text"]:focus,
+.form__arrow input[type="date"]:focus {
+  box-shadow: 0 0 8px #88d5e9;
+  border: 1px solid #88d5e9;
 }
