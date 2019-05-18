@@ -37,9 +37,6 @@ h1 {
   border: 1px solid black;
 }
 
-/* .body {
-} */
-
 .task__item {
   height: 100px;
   margin: 40px;
@@ -59,8 +56,10 @@ h1 {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   overflow: auto;
-  /* position */
+  position: sticky;
+  bottom: 0;
 }
+
 .form__arrow {
   display: block;
   font-weight: bolder;
@@ -111,7 +110,6 @@ h1 {
 .footer_date {
   margin-bottom: 1em;
   display: none;
-  /*  display: none; */
   flex-direction: row;
   justify-content: space-evenly;
 }
@@ -124,12 +122,7 @@ h1 {
   margin: 0px;
   transition: all 0.3s ease-in-out;
   outline: none;
-}
-
-.footer input[type="text"]:focus,
-.footer input[type="date"]:focus {
-  box-shadow: 0 0 8px #88d5e9;
-  border: 1px solid #88d5e9;
+  border-radius: 2px;
 }
 
 .footer input[type="submit"],
@@ -138,10 +131,16 @@ h1 {
   padding: 8px 15px 8px 15px;
   border: none;
   color: black;
+  border-radius: 5px;
 }
 
 .footer input[type="submit"]:hover,
 .footer input[type="button"]:hover {
   background: white;
   box-shadow: none;
+}
+.footer input[type="text"]:focus,
+.footer input[type="date"]:focus {
+  box-shadow: 0 0 8px #88d5e9;
+  border: 1px solid #88d5e9;
 }
