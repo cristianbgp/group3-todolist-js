@@ -7,6 +7,7 @@ html {
 }
 
 body {
+  padding-top:3em;
   font-family: "Segoe", "Segoe UI", "Arial", "sans-serif";
   min-height: 100vh;
   margin: 0;
@@ -16,25 +17,85 @@ h1 {
   color: black;
 }
 
+
+/* header */
 .header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background: black;
+  padding: 20px 10px;
 }
 
-/* .header__title {
+.header__title {
   align-self: center;
-} */
+  font-size: 15px;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 5px;
+}
 
 .header__date {
+  margin: 0 5px;
   font-size: 15px;
+  color: white;
 }
 
-.header__options {
-  padding: 10px;
-  border: 1px solid black;
+.close-button {
+  left: -50px;
+  z-index: 100;
 }
+
+.order__list {
+  background: black;
+}
+
+.order__list a {
+  position: relative;
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: #eee;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.order__list a::before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  top: 80%;
+}
+
+/* header-hovers */
+
+.header__title:hover {
+  color: gray;
+}
+
+.header__date:hover {
+  color: gray;
+}
+
+.header__options > button:hover {
+  color: gray;
+}
+
+.order__list a:hover {
+  color: gray;
+}
+
+.order__list a:hover::before {
+  width: 40%;
+  background-color: gray;
+}
+
+/* Tasks */
 
 .task {
   padding: 0em;
@@ -215,4 +276,12 @@ h1 {
     min-width: initial;
     margin-top: initial;
   }
+}
+
+
+/* helpers */
+.fix-button {
+  background: black;
+  border: none;
+  color: white;
 }
