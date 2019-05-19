@@ -256,10 +256,13 @@ function tomorrow() {
   return tomorrow;
 }
 
+let toogle = 1;
 document.querySelector(".form__arrow").addEventListener("click", function() {
-  if (document.querySelector(".footer_date").style.display == "none") {
+  if (toogle == 1) {
     document.querySelector(".footer_date").style.display = "flex";
+    console.log;
   } else {
     document.querySelector(".footer_date").style.display = "none";
   }
+  toogle = toogle * -1;
 });
