@@ -209,12 +209,15 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .footer_date {
-  margin-bottom: 1em;
   display: none;
   flex-direction: row;
   justify-content: space-evenly;
+  order: 3;
+  min-width: 400px;
+  margin-top: 1em;
 }
 
 .footer input[type="text"],
@@ -246,4 +249,20 @@ h1 {
 .footer input[type="date"]:focus {
   box-shadow: 0 0 8px #88d5e9;
   border: 1px solid #88d5e9;
+}
+
+@media screen and (min-width: 850px) {
+  .form__arrow {
+    display: none;
+  }
+  .footer_main {
+    margin-top: 1em;
+    flex-wrap: initial;
+  }
+  .footer_date {
+    display: flex;
+    order: initial;
+    min-width: initial;
+    margin-top: initial;
+  }
 }
