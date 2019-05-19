@@ -22,48 +22,6 @@ let tasksArray = [
     dueDate: new Date("2019-01-19"),
     marked: false,
     priority: false
-  },
-  {
-    description: "Make Code Review",
-    creationDate: new Date("2019-04-01"),
-    dueDate: new Date("2019-01-05"),
-    marked: true,
-    priority: false
-  },
-  {
-    description: "Play Soccer",
-    creationDate: new Date("2019-04-03"),
-    dueDate: new Date("2019-01-17"),
-    marked: false,
-    priority: false
-  },
-  {
-    description: "Study English",
-    creationDate: new Date("2019-04-02"),
-    dueDate: new Date("2019-01-19"),
-    marked: false,
-    priority: false
-  },
-  {
-    description: "Study for Evaluation Gate",
-    creationDate: new Date("2019-04-01"),
-    dueDate: new Date("2019-01-05"),
-    marked: true,
-    priority: false
-  },
-  {
-    description: "Go to Gamarra",
-    creationDate: new Date("2019-04-03"),
-    dueDate: new Date("2019-01-17"),
-    marked: false,
-    priority: false
-  },
-  {
-    description: "Buy Cat Food",
-    creationDate: new Date("2019-04-02"),
-    dueDate: new Date("2019-01-19"),
-    marked: false,
-    priority: false
   }
 ];
 
