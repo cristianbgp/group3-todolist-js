@@ -9,33 +9,104 @@ html {
 body {
   font-family: "Segoe", "Segoe UI", "Arial", "sans-serif";
   margin: 0;
+  padding-bottom: 5em;
+  margin-top: 3.5em;
+  width: 90vw;
 }
 
 h1 {
   color: black;
 }
 
+/* header */
 .header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  background: black;
+  padding: 20px 10px;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  color: white;
+  background-color: black;
+  position: fixed;
 }
 
-/* .header__title {
+.header__title {
   align-self: center;
-} */
-.body {
-  padding-bottom: 8em;
-}
-.header__date {
-  font-size: 15px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 5px;
 }
 
-.header__options {
-  padding: 10px;
-  border: 1px solid black;
+.header__date {
+  margin: 0 5px;
+  font-size: 20px;
+  color: white;
 }
+
+.order__list {
+  background: black;
+  position: fixed;
+  left: 0;
+  width: 150px;
+  height: 90%;
+  background-color: black;
+}
+
+.order__list a {
+  position: relative;
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: #eee;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.order__list a::before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  top: 80%;
+}
+
+.header__options button {
+  display: flex;
+  justify-content: center;
+}
+
+/* header-hovers */
+
+.header__title:hover {
+  color: gray;
+}
+
+.header__date:hover {
+  color: gray;
+}
+
+.header__options > button:hover {
+  color: gray;
+}
+
+.order__list a:hover {
+  color: gray;
+}
+
+.order__list a:hover::before {
+  width: 40%;
+  background-color: gray;
+}
+
+/* Tasks */
 
 .task {
   padding: 0em;
@@ -218,5 +289,17 @@ h1 {
   }
   .body {
     padding-bottom: 0;
+    width: 70vw;
   }
+
+  .header {
+    display: flex !important;
+  }
+}
+
+/* helpers */
+.fix-button {
+  background: black;
+  border: none;
+  color: white;
 }

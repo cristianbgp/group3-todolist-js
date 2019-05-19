@@ -22,48 +22,6 @@ let tasksArray = [
     dueDate: new Date("2019-01-19"),
     marked: false,
     priority: false
-  },
-  {
-    description: "Make Code Review",
-    creationDate: new Date("2019-04-01"),
-    dueDate: new Date("2019-01-05"),
-    marked: true,
-    priority: false
-  },
-  {
-    description: "Play Soccer",
-    creationDate: new Date("2019-04-03"),
-    dueDate: new Date("2019-01-17"),
-    marked: false,
-    priority: false
-  },
-  {
-    description: "Study English",
-    creationDate: new Date("2019-04-02"),
-    dueDate: new Date("2019-01-19"),
-    marked: false,
-    priority: false
-  },
-  {
-    description: "Study for Evaluation Gate",
-    creationDate: new Date("2019-04-01"),
-    dueDate: new Date("2019-01-05"),
-    marked: true,
-    priority: false
-  },
-  {
-    description: "Go to Gamarra",
-    creationDate: new Date("2019-04-03"),
-    dueDate: new Date("2019-01-17"),
-    marked: false,
-    priority: false
-  },
-  {
-    description: "Buy Cat Food",
-    creationDate: new Date("2019-04-02"),
-    dueDate: new Date("2019-01-19"),
-    marked: false,
-    priority: false
   }
 ];
 
@@ -187,6 +145,7 @@ function handleOrderDue(event) {
   currentOrder = ORDER_TYPES[2];
   currentDirectionDue = isAscendentDue;
   isAscendentDue = !isAscendentDue;
+  document.querySelector(".order_options").style.display = "none";
   showTasks();
 }
 
@@ -195,6 +154,7 @@ function handleOrderCreation(event) {
   currentOrder = ORDER_TYPES[1];
   currentDirectionCreation = isAscendentCreation;
   isAscendentCreation = !isAscendentCreation;
+  document.querySelector(".order_options").style.display = "none";
   showTasks();
 }
 
@@ -203,6 +163,7 @@ function handleOrderAlphabetic(event) {
   currentOrder = ORDER_TYPES[0];
   currentDirectionAlphabetic = isAscendentAlphabetic;
   isAscendentAlphabetic = !isAscendentAlphabetic;
+  document.querySelector(".order_options").style.display = "none";
   showTasks();
 }
 
@@ -266,3 +227,12 @@ document.querySelector(".form__arrow").addEventListener("click", function() {
   }
   toogle = toogle * -1;
 });
+
+function showDiv() {
+  var x = document.getElementById("appear");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

@@ -16,28 +16,26 @@
 
   <body>
     <div class="header">
-      <div class="header__options"><i class="fas fa-sliders-h"></i></div>
+      <div class="header__options">
+        <button
+          class="fas fa-sliders-h fix-button"
+          id="open-button"
+          onclick="showDiv()"
+        ></button>
+      </div>
       <h1 class="header__title">My To Do List</h1>
-      <h2 class="header__date">Thursday, May 16th</h2>
     </div>
-    <div class="order_options">
-      <span>Sort by:</span>
-      <ul>
-        <li id="order-by-due">Due Date <span>⇧</span><span>⇩</span></li>
-        <li id="order-by-creation">
-          Creation Date<span>⇧</span><span>⇩</span>
-        </li>
-        <li id="order-by-alphabetic">Alphabetic<span>⇧</span><span>⇩</span></li>
-      </ul>
+    <div class="order_options" id="appear" style="display:none;">
+      <div class="order__list" id="order__list">
+        <a id="order-by-due">Due Date</a>
+        <a id="order-by-creation">
+          Creation Date
+        </a>
+        <a id="order-by-alphabetic">Alphabetic</a>
+      </div>
     </div>
     <div class="body">
-      <ul class="task" id="task_list">
-        <!-- <li class="task__item">
-        <input type="checkbox" class="task__checkbox" id="id_ejemplo" onclick="markTaskCallback(this);" />
-        <span class="task_description">Tarea Ejemplo</span>
-        <span class="task__date">Today</span><input type="checkbox" class="task__priority" />
-      </li> -->
-      </ul>
+      <ul class="task" id="task_list"></ul>
     </div>
     <div class="footer">
       <span class="form__arrow">&#94;</span>
