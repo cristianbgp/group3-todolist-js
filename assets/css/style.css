@@ -7,30 +7,35 @@ html {
 }
 
 body {
-  padding-top:3em;
   font-family: "Segoe", "Segoe UI", "Arial", "sans-serif";
-  min-height: 100vh;
   margin: 0;
+  padding-bottom: 5em;
+  margin-top: 5em;
 }
 
 h1 {
   color: black;
 }
 
-
 /* header */
 .header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background: black;
-  padding: 20px 10px;
+  padding: 20px 10px; 
+  width: 100vw;
+  left: 0;
+  top: 0;
+  color: white;
+  background-color: black;
+  position: fixed;
 }
 
 .header__title {
   align-self: center;
-  font-size: 15px;
+  font-size: 20px;
   color: white;
   display: flex;
   flex-wrap: wrap;
@@ -39,17 +44,17 @@ h1 {
 
 .header__date {
   margin: 0 5px;
-  font-size: 15px;
+  font-size: 20px;
   color: white;
-}
-
-.close-button {
-  left: -50px;
-  z-index: 100;
 }
 
 .order__list {
   background: black;
+  position: fixed;
+  left: 0;
+  width: 150px;
+  height: 90%;
+  background-color: black;
 }
 
 .order__list a {
@@ -70,6 +75,11 @@ h1 {
   width: 0%;
   height: 2px;
   top: 80%;
+}
+
+.header__options button {
+  display: flex;
+  justify-content: center;
 }
 
 /* header-hovers */
@@ -271,10 +281,18 @@ h1 {
     flex-wrap: initial;
   }
   .footer_date {
-    display: flex;
+    display: flex !important;
     order: initial;
     min-width: initial;
     margin-top: initial;
+  }
+  .body {
+    padding-bottom: 0;
+    width: 70vw;
+  }
+
+  .header {
+    display: flex !important;
   }
 }
 
