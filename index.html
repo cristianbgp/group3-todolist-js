@@ -37,11 +37,15 @@
     </ul>
   </div>
   <div class="footer">
+    <span class="form__arrow">&#94;</span>
     <form class="form" id="newTaskForm">
-      <button class="form__arrow"><i class="fas fa-chevron-up"></i></button>
-      <input type="text" placeholder="Add new task here" class="form__task" name="descriptionTask" />
-      <input id="task_date" type="date" class="form__date" name="dueDateTask" />
-      <input type="submit" value="Add" class="form__submit" id="submit-button" />
+      <div class="footer_main">
+        <input type="text" placeholder="Add new task here" class="form__task" name="descriptionTask" />
+        <input type="submit" value="Add" class="form__submit" id="submit-button" />
+      </div>
+      <div class="footer_date">
+        <input id="task_date" type="date" class="form__date" name="dueDateTask" />
+      </div>
     </form>
   </div>
   <script src="./assets/js/main.js"></script>
