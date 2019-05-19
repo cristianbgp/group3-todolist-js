@@ -8,7 +8,6 @@ html {
 
 body {
   font-family: "Segoe", "Segoe UI", "Arial", "sans-serif";
-  min-height: 100vh;
   margin: 0;
 }
 
@@ -26,7 +25,9 @@ h1 {
 /* .header__title {
   align-self: center;
 } */
-
+.body {
+  padding-bottom: 8em;
+}
 .header__date {
   font-size: 15px;
 }
@@ -210,9 +211,12 @@ h1 {
     flex-wrap: initial;
   }
   .footer_date {
-    display: flex;
+    display: flex !important;
     order: initial;
     min-width: initial;
     margin-top: initial;
+  }
+  .body {
+    padding-bottom: 0;
   }
 }
