@@ -251,7 +251,7 @@ h1 {
   border: 1px solid #88d5e9;
 }
 
-@media screen and (min-width: 850px) {
+/* @media screen and (min-width: 850px) {
   .form__arrow {
     display: none;
   }
@@ -265,4 +265,4 @@ h1 {
     min-width: initial;
     margin-top: initial;
   }
-}
+} */
