@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-  color: black;
+  color: #141414;
 }
 
 .header {
@@ -26,12 +26,21 @@ h1 {
 } */
 
 .header__date {
-  font-size: 15px;
+  font-size: 40px;
+  font-weight: 600;
+  height: 100px;;
+  width: 400px;
+  text-align: center;
 }
 
 .header__options {
-  padding: 10px;
-  border: 1px solid black;
+  /* padding: 10px;
+  border: 1px solid black; */
+  top: 0;
+  width: 400px;
+  height: 100px;
+  color: #141414;
+  font-weight: 600;
 }
 
 /* .body {
@@ -106,27 +115,20 @@ h1 {
   font-size: 2em;
 }
 
-.header__options {
-  background: #141414;
-  width: 200px;
-  height: 100px;
-  color: #999;
-}
-
 .header__button {
   border: none;
-  background: #141414;
-  font-size: 20px;
+  font-size: 40px;
   display: block;
-  letter-spacing: 1px;
   text-align: center;
   cursor: pointer;
   width: 100%;
-  color: #999;
+  color: #141414;
+  font-weight: 600;
+  top: 0;
 }
 
 .header__button:hover {
-  color: white;
+  color: gold;
 }
 
 .order__arrows {
@@ -134,5 +136,13 @@ h1 {
 }
 
 .order__arrows:hover {
-  color: white;
+  color: gold;
+}
+
+.header__title {
+  font-weight: 600;
+  height: 100px;
+  width: 400px;
+  text-align: center;
+  font-size: 40px;
 }
